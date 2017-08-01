@@ -38,11 +38,7 @@ After that:
  log_debug [ 'and we can defer evaluation of %s if we want', sub { 'stuff' } ];
  log_trace sub { 'while avoiding sprintfiness, if needed' };
 
-To install only for current package:
-
- use Log::ger::Format;
- Log::ger::Format->set_for_current_package('Flogger');
- use Log::ger;
+Note that this affects the importing package only.
 
 
 =head1 DESCRIPTION
