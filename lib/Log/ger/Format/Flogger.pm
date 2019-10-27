@@ -18,7 +18,7 @@ sub get_hooks {
             sub {        # hook
                 my %hook_args = @_;
 
-                my $formatter = sub { flog(@_) };
+                my $formatter = \&flog;
                 [$formatter];
             }],
     };
