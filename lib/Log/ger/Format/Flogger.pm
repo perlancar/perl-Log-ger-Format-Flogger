@@ -13,9 +13,13 @@ sub get_hooks {
 
     return {
         create_formatter => [
-            __PACKAGE__, 50,
-            sub {
-                [sub { flog(@_) }];
+            __PACKAGE__, # key
+            50,          # priority
+            sub {        # hook
+                my %hook_args = @_;
+
+                my $formatter = sub { flog(@_) };
+                [$formatter];
             }],
     };
 }
